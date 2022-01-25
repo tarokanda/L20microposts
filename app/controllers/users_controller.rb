@@ -6,6 +6,8 @@ before_action :require_user_logged_in, only: [:index, :show]
 
   def show
     @user = User.find(params[:id])
+    @pagy, @microposts = pagy(@user.microposts.order(id: :desc))
+    counts(@user)
   end
   
   def new
