@@ -32,5 +32,24 @@ class MicropostsController < ApplicationController
       redirect_to root_url
     end
   end
+  
+  
+  #お気に入り設定(部分的には「users_controller」に記載すべき？？そもそも「likers」自体いらない？)
+  def likings
+    @user = User.find(params[:id])
+    @pagy, @likings = pagy(@user.likings)
+    counts(@likings)
+  end
+  
+  
+  
+  #def likers
+  #  @micropost = Micropost.find(params[:id])
+  #  @pagy, @likers = pagy(@micropost.likers)
+  #  counts(@user)
+  #end
+  
+  
+  
 end
 
