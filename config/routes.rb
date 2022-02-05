@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   get 'signup', to: 'users#new'
+  
+  
   resources :users, only: [:index, :show, :create] do
     member do
       get :followings
@@ -14,13 +16,11 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
-  end
-  
-  
+  #end
   #お気に入り登録の設定
-  resources :users, only: [:index, :show, :create] do
+  #不要→resources :users, only: [:index, :show, :create] do
     member do
-      get :likings
+      #get :likings
       get :likes
     end
   end
