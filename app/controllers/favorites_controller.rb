@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :require_user_logged_in
- #お気に入り登録の設定
+ #お気に入り登録
   def create
 
     micropost = Micropost.find(params[:like_id])
