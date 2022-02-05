@@ -12,17 +12,12 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      get :likes
     end
     collection do
       get :search
     end
-  #end
-  #お気に入り登録の設定
-  #不要→resources :users, only: [:index, :show, :create] do
-    member do
-      #get :likings
-      get :likes
-    end
+
   end
   
   
